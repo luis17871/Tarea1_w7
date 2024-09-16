@@ -8,7 +8,7 @@ import { ICliente } from 'src/app/Interfaces/icliente';
 import { ClientesService } from 'src/app/Services/clientes.service';
 import { FacturaService } from 'src/app/Services/factura.service';
 import jsPDF from 'jspdf';
-import 'jspdf-autotable';
+//import 'jspdf-autotable';
 import html2canvas from 'html2canvas';
 
 @Component({
@@ -166,5 +166,8 @@ export class NuevafacturaComponent implements OnInit {
     this.productoelejido.reduce((valor, producto) => {
       this.totalapagar += producto.Total;
     }, 0);
+  }
+  Imprimirfacturaphp(){
+    window.open("http://localhost/Sexto/Proyectos/03MVC/reports/factura.report.php")
   }
 }
